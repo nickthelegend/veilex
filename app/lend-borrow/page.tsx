@@ -14,9 +14,9 @@ import {
   repayUncollateralizedTx,
 } from "@/lib/market";
 
-const LS_PROFILE = "xorr_bnpl_profile";
-const LS_COLLAT = "xorr_market_collat";
-const LS_UNCOLLAT = "xorr_market_uncollat";
+const LS_PROFILE = "veilex_bnpl_profile";
+const LS_COLLAT = "veilex_market_collat";
+const LS_UNCOLLAT = "veilex_market_uncollat";
 const MIN_SCORE = 600;
 
 type CollatPos = { id: string; lockId: string; repay: number };
@@ -146,7 +146,7 @@ export default function LendBorrowPage() {
   return (
     <div className="flex-1 flex flex-col py-8 gap-8 w-full font-mono text-white">
       <div className="flex flex-col gap-2">
-        <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // Lend_Borrow_Market</span>
+        <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // Lend_Borrow_Market</span>
         <h1 className="text-3xl md:text-5xl tracking-tighter font-black uppercase">Money_Market</h1>
       </div>
 

@@ -1,7 +1,7 @@
-// Sui configuration for XORR (migrated from EVM/Sepolia).
-// Set these in .env.local after publishing xorr-contracts to testnet:
+// Sui configuration for VEILEX (migrated from EVM/Sepolia).
+// Set these in .env.local after publishing veilex-contracts to testnet:
 //   NEXT_PUBLIC_SUI_NETWORK=testnet
-//   NEXT_PUBLIC_USDT_PACKAGE_ID=0x...   (published xorr-contracts package id)
+//   NEXT_PUBLIC_USDT_PACKAGE_ID=0x...   (published veilex-contracts package id)
 //   NEXT_PUBLIC_USDT_FAUCET_ID=0x...    (the shared usdt::Faucet object id)
 
 export type SuiNetwork = "testnet" | "mainnet" | "devnet" | "localnet";
@@ -20,7 +20,7 @@ export const SUI_RPC_URLS: Record<SuiNetwork, string> = {
 
 // Defaults are the live USDC v3 package + shared Faucet on Sui testnet, so the
 // app is configured out-of-the-box. Override via env for other deployments.
-/** Published `xorr_contracts` package id (holds the `usdc` module). */
+/** Published `veilex_contracts` package id (holds the `usdc` module). */
 export const USDT_PACKAGE_ID =
   process.env.NEXT_PUBLIC_USDT_PACKAGE_ID ?? "0xa105190b2218938815920010957f7adf856940452e304a63e195e132f14713b9";
 

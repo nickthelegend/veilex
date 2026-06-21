@@ -1,5 +1,5 @@
 // Lend/borrow market transaction builders (over- and under-collateralized),
-// wired to the published xorr-contracts `market` + `lending_pool` modules.
+// wired to the published veilex-contracts `market` + `lending_pool` modules.
 // Collateral is USDT for the demo (C = T).
 import { Transaction } from "@mysten/sui/transactions";
 import { USDT_PACKAGE_ID, USDT_DECIMALS } from "./sui";
@@ -96,7 +96,7 @@ export function buyNowUnsecuredTx(p: { profileId: string; escrowId: string; amou
   tx.moveCall({
     target: `${PKG}::merchant_escrow::settle_payment`,
     typeArguments: [T],
-    arguments: [tx.object(p.escrowId), borrowed, tx.pure.vector("u8", Array.from(new TextEncoder().encode(p.orderId ?? "xorr-bnpl")))],
+    arguments: [tx.object(p.escrowId), borrowed, tx.pure.vector("u8", Array.from(new TextEncoder().encode(p.orderId ?? "veilex-bnpl")))],
   });
   return tx;
 }

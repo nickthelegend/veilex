@@ -97,7 +97,7 @@ export default function SupportPage() {
                             </div>
                             <div className="overflow-y-auto max-h-[580px] scrollbar-hide">
                                 {[
-                                    { title: "STAKING_MECHANICS_V1", desc: "Optimization protocols for maximum yield accrual within the XORR lending ecosystem.", icon: BookOpen },
+                                    { title: "STAKING_MECHANICS_V1", desc: "Optimization protocols for maximum yield accrual within the VEILEX lending ecosystem.", icon: BookOpen },
                                     { title: "REPAYMENT_LOGIC", desc: "Understanding automated BNPL settlements and health factor protection thresholds.", icon: Calculator },
                                     { title: "NETWORK_LATENCY_FAQ", desc: "Diagnostics for inter-chain settlement delay and RPC endpoint synchronization.", icon: Monitor },
                                     { title: "VAULT_ARCHITECTURE_SEC", desc: "Overview of L3 secure vault implementations and collateral isolation layers.", icon: Shield },

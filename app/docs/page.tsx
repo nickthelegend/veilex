@@ -18,7 +18,7 @@ export default function DocsPage() {
       <aside className="w-72 glass-sidebar flex flex-col custom-scrollbar overflow-y-auto hidden lg:flex bg-[#05080f]/70 border-r border-white/5">
         <div className="p-8">
           <div className="mb-10">
-            <h1 className="text-white text-sm font-black tracking-[0.2em] mb-1">XORR_DOCS</h1>
+            <h1 className="text-white text-sm font-black tracking-[0.2em] mb-1">VEILEX_DOCS</h1>
             <p className="text-primary/60 text-[9px] font-bold uppercase tracking-[0.3em]">PRIVATE_CREDIT_ON_SUI</p>
           </div>
           <nav className="space-y-2">
@@ -56,11 +56,11 @@ export default function DocsPage() {
 
           <div className="mb-16">
             <h1 className="text-5xl font-black tracking-tighter leading-none mb-8 text-white uppercase italic">
-              XORR_PROTOCOL <span className="text-primary">//</span> <br />
+              VEILEX_PROTOCOL <span className="text-primary">//</span> <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/30">SPECIFICATION</span>
             </h1>
             <p className="text-white/40 text-sm leading-relaxed max-w-2xl font-medium">
-              XORR is a BNPL and lend/borrow protocol on Sui, with private credit scoring computed inside a Trusted
+              VEILEX is a BNPL and lend/borrow protocol on Sui, with private credit scoring computed inside a Trusted
               Execution Environment (TEE). Supply liquidity, borrow against collateral, or borrow unsecured against
               your reputation — all settled on-chain in Move.
             </p>
@@ -182,7 +182,7 @@ export default function DocsPage() {
           <div className="p-6 bg-[#1a1c22] border border-white/5 rounded-2xl space-y-4">
              <Terminal className="text-primary size-5" />
              <p className="text-[10px] font-black text-white uppercase tracking-wider">Integration Support</p>
-             <p className="text-[9px] text-white/30 uppercase leading-relaxed">Reach the XORR team for Sui testnet integration support and contract addresses.</p>
+             <p className="text-[9px] text-white/30 uppercase leading-relaxed">Reach the VEILEX team for Sui testnet integration support and contract addresses.</p>
           </div>
         </div>
       </aside>

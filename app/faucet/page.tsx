@@ -55,7 +55,7 @@ export default function FaucetPage() {
   return (
     <div className="flex-1 flex flex-col py-8 gap-8 w-full font-mono text-white">
       <div className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] tracking-[0.4em] text-primary/60 uppercase animate-pulse">XORR_Faucet // sui_{SUI_NETWORK}</span>
+        <span className="font-mono text-[10px] tracking-[0.4em] text-primary/60 uppercase animate-pulse">VEILEX_Faucet // sui_{SUI_NETWORK}</span>
         <h1 className="text-white text-3xl md:text-5xl tracking-tighter font-black uppercase">Testnet_Resources</h1>
       </div>
 
@@ -73,7 +73,7 @@ export default function FaucetPage() {
               <div className="flex items-start gap-2 bg-amber-500/10 border border-amber-500/30 rounded-xl px-4 py-3">
                 <AlertTriangle size={14} className="text-amber-400 flex-shrink-0 mt-0.5" />
                 <span className="text-[10px] font-bold uppercase tracking-tight text-amber-400/90">
-                  Faucet not configured. Publish xorr-contracts, then set NEXT_PUBLIC_USDT_PACKAGE_ID and NEXT_PUBLIC_USDT_FAUCET_ID in .env.local
+                  Faucet not configured. Publish veilex-contracts, then set NEXT_PUBLIC_USDT_PACKAGE_ID and NEXT_PUBLIC_USDT_FAUCET_ID in .env.local
                 </span>
               </div>
             )}

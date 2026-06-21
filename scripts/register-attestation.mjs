@@ -5,7 +5,7 @@
 //   3. PTB: sui::nitro_attestation::load_nitro_attestation (verifies AWS cert
 //      chain + COSE sig natively) -> confidential_credit::register_enclave_key
 //      (asserts PCRs match + adopts the embedded enclave key)
-//   SUI_PRIVATE_KEY=$(sui keytool export --key-identity xorr-deployer --json | grep -oE 'suiprivkey1[a-z0-9]+') node scripts/register-attestation.mjs
+//   SUI_PRIVATE_KEY=$(sui keytool export --key-identity veilex-deployer --json | grep -oE 'suiprivkey1[a-z0-9]+') node scripts/register-attestation.mjs
 import { SuiJsonRpcClient } from "@mysten/sui/jsonRpc";
 import { Ed25519Keypair } from "@mysten/sui/keypairs/ed25519";
 import { Transaction } from "@mysten/sui/transactions";

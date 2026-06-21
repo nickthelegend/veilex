@@ -1,7 +1,7 @@
-// REFERENCE — credit scoring INSIDE the enclave (XORR "step 1").
+// REFERENCE — credit scoring INSIDE the enclave (VEILEX "step 1").
 //
 // WHY: today the credit enclave SIGNS a score it is handed (see
-// xorr-core/app/api/credit-score/route.ts), so the score is an input, not
+// veilex-core/app/api/credit-score/route.ts), so the score is an input, not
 // computed from private data. This module moves the SCORING COMPUTATION INSIDE
 // the enclave: the caller sends private financial inputs, the enclave computes
 // the score and signs only the result. The raw inputs never leave the enclave
@@ -17,7 +17,7 @@
 //   1. Add `mod credit_scoring;` and route `.route("/score_credit", post(credit_scoring::score_credit))`.
 //   2. Rebuild the enclave image (`make ENCLAVE_APP=<app>`, `nitro-cli build-enclave`, `run-enclave`).
 //   3. The image hash changes => PCR0 changes => re-pin + re-register on-chain:
-//      `node xorr-core/scripts/register-attestation.mjs` (verifies the fresh
+//      `node veilex-core/scripts/register-attestation.mjs` (verifies the fresh
 //      attestation, re-binds the key to the new PCRs).
 //   4. Point /api/credit-score at `POST /score_credit` with the `CreditInputs` body
 //      (send the user's private inputs; stop computing the score server-side).

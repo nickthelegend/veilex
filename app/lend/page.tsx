@@ -73,7 +73,7 @@ export default function LendPage() {
   return (
     <div className="flex-1 flex flex-col py-8 gap-8 w-full font-mono text-white">
       <div className="flex flex-col gap-2">
-        <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // Lend · sui_{SUI_NETWORK}</span>
+        <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // Lend · sui_{SUI_NETWORK}</span>
         <h1 className="text-white text-3xl md:text-5xl tracking-tighter font-black uppercase">Lend &amp; Earn</h1>
       </div>
 

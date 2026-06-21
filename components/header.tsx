@@ -33,7 +33,7 @@ export function AppHeader() {
           <SidebarDrawer open={open} onOpenChange={setOpen} />
           <Link href="/" className="font-semibold tracking-wide">
             <span className="inline-flex items-center gap-2">
-              <Image src="/logo.png" alt="XORR" width={120} height={32} className="h-8 w-auto max-h-8" />
+              <Image src="/logo.png" alt="VEILEX" width={120} height={32} className="h-8 w-auto max-h-8" />
             </span>
           </Link>
         </div>

@@ -12,7 +12,7 @@ import { TOKEN_POOLS, borrowFromPoolTx, repayCollateralizedToPoolTx, poolForType
 import { borrowUncollateralizedTx, repayUncollateralizedTx } from "@/lib/market"
 import { SUI_NETWORK } from "@/lib/sui"
 
-const LS_PROFILE = "xorr_bnpl_profile"
+const LS_PROFILE = "veilex_bnpl_profile"
 const fmt = (v: number) => (v >= 1_000 ? `${(v / 1_000).toFixed(1)}K` : v.toLocaleString(undefined, { maximumFractionDigits: 2 }))
 type Bal = { total: number; primary: string | null }
 
@@ -92,7 +92,7 @@ export default function BorrowPage() {
     <div className="flex-1 flex flex-col py-8 gap-8 w-full font-mono text-white">
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div className="flex flex-col gap-2">
-          <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // Borrow · sui_{SUI_NETWORK}</span>
+          <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // Borrow · sui_{SUI_NETWORK}</span>
           <h1 className="text-white text-3xl md:text-5xl tracking-tighter font-black uppercase">Borrow</h1>
         </div>
         <button onClick={() => { setOpen(true); setAmount(""); setMode("collateralized"); setPool(TOKEN_POOLS[0]) }} disabled={!account}

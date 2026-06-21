@@ -12,8 +12,8 @@ import {
 import { readPositions } from "@/lib/positions";
 import { SUI_NETWORK } from "@/lib/sui";
 
-const LS_PROFILE = "xorr_bnpl_profile";
-const LS_LOANS = "xorr_bnpl_loans";
+const LS_PROFILE = "veilex_bnpl_profile";
+const LS_LOANS = "veilex_bnpl_loans";
 
 // A loan we opened, plus its (optional) EMI plan. n=1 => pay-in-full.
 type LoanRec = { id: string; n: number; perAmount: number; startMs: number; paid: number; kind?: string };
@@ -142,7 +142,7 @@ export default function BnplPage() {
   return (
     <div className="flex-1 flex flex-col py-8 gap-8 w-full font-mono text-white">
       <div className="flex flex-col gap-2">
-        <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // Buy_Now_Pay_Never</span>
+        <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // Buy_Now_Pay_Never</span>
         <h1 className="text-3xl md:text-5xl tracking-tighter font-black uppercase">Credit &amp; Repayment</h1>
       </div>
 

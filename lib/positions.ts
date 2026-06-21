@@ -1,5 +1,5 @@
-// On-chain read helpers for XORR positions on Sui. Reads the connected wallet's
-// owned objects from the published xorr-contracts package and the demo
+// On-chain read helpers for VEILEX positions on Sui. Reads the connected wallet's
+// owned objects from the published veilex-contracts package and the demo
 // LendingPool. Used by /positions, /pools, and the home dashboard.
 //
 // All amounts are returned in USDT units (6 decimals). Uses the same
@@ -56,8 +56,8 @@ function pickAmount(fields: Record<string, unknown>, keys: string[]): number {
 }
 
 /**
- * Read every XORR position object owned by `owner`. Paginates getOwnedObjects
- * and filters to the four XORR struct types. Returns [] when the package id is
+ * Read every VEILEX position object owned by `owner`. Paginates getOwnedObjects
+ * and filters to the four VEILEX struct types. Returns [] when the package id is
  * not configured (keeps callers render-safe).
  */
 export async function readPositions(

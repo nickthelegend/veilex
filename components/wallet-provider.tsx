@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "next/navigation"
 // MIGRATED → Sui. This legacy Algorand (Pera) provider is DEAD — the live wallet
 // provider is the @mysten/dapp-kit WalletProvider in components/providers.tsx.
 // The @perawallet/connect dependency was removed; connect() now only uses the
-// dev mock-address prompt. TODO(xorr): delete this file once nothing references
+// dev mock-address prompt. TODO(veilex): delete this file once nothing references
 // useWallet().
 type PeraCtor = new (...args: any[]) => { connect: () => Promise<string[]>; disconnect: () => Promise<void> }
 const PeraWalletConnect: PeraCtor | null = null

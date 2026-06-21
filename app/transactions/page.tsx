@@ -83,7 +83,7 @@ export default function TransactionsPage() {
     <div className="flex flex-col gap-8 py-8 font-mono text-white">
       <div className="flex items-center justify-between">
         <div className="flex flex-col gap-2">
-          <span className="font-mono text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // Activity · sui_{SUI_NETWORK}</span>
+          <span className="font-mono text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // Activity · sui_{SUI_NETWORK}</span>
           <h1 className="text-white text-3xl tracking-tighter font-black uppercase">Transaction History</h1>
         </div>
         <button onClick={refresh} disabled={loading || !account}

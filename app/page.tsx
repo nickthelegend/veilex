@@ -12,7 +12,7 @@ import { readLendingPool, readPositions, type LendingPoolStats, type OnChainPosi
 import { SUI_NETWORK, suiscanTxUrl } from "@/lib/sui"
 import { ConnectWalletButton } from "@/components/wallet/connect-wallet-button"
 
-const LS_PROFILE = "xorr_bnpl_profile"
+const LS_PROFILE = "veilex_bnpl_profile"
 
 const ACTIONS = [
   { href: "/bnpl", label: "Buy Now, Pay Never", desc: "Checkout with credit, repay from yield.", icon: CreditCard },
@@ -78,7 +78,7 @@ export default function Page() {
           {/* Pitch + connect CTA */}
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-[10px] text-primary font-bold tracking-widest uppercase backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" /> XORR // Sui_{SUI_NETWORK} · Live
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" /> VEILEX // Sui_{SUI_NETWORK} · Live
             </div>
 
             <div className="space-y-5">
@@ -157,7 +157,7 @@ export default function Page() {
         {/* How It Works Section */}
         <div className="space-y-12 pb-16">
           <div className="text-center space-y-2">
-            <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // WORKFLOW</span>
+            <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // WORKFLOW</span>
             <h2 className="text-3xl md:text-4xl tracking-tighter font-black uppercase">How It Works</h2>
             <p className="text-xs text-foreground/40 max-w-md mx-auto">Three simple steps to unlock private decentralized consumer credit on Sui.</p>
           </div>
@@ -206,9 +206,9 @@ export default function Page() {
         {/* FAQ Section */}
         <div className="space-y-12 pb-24 border-t border-border/20 pt-16">
           <div className="text-center space-y-2">
-            <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // FAQ</span>
+            <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // FAQ</span>
             <h2 className="text-3xl md:text-4xl tracking-tighter font-black uppercase">Frequently Asked Questions</h2>
-            <p className="text-xs text-foreground/40 max-w-md mx-auto">Get answers to the most common questions about the XORR protocol.</p>
+            <p className="text-xs text-foreground/40 max-w-md mx-auto">Get answers to the most common questions about the VEILEX protocol.</p>
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
@@ -219,15 +219,15 @@ export default function Page() {
               },
               {
                 q: "How does the TEE credit score work?",
-                a: "XORR Finance computes your credit score inside an AWS Nitro TEE (Trusted Execution Environment). It processes off-chain financial data confidentially, issuing an on-chain cryptographic attestation. Your raw financial data never leaves the enclave."
+                a: "VEILEX Finance computes your credit score inside an AWS Nitro TEE (Trusted Execution Environment). It processes off-chain financial data confidentially, issuing an on-chain cryptographic attestation. Your raw financial data never leaves the enclave."
               },
               {
                 q: "Is my financial data private?",
-                a: "Yes. Because all computations occur inside a confidential enclave (TEE), no one—not even the XORR protocol developers—can inspect your private financial data. Only the final score is attested on-chain."
+                a: "Yes. Because all computations occur inside a confidential enclave (TEE), no one—not even the VEILEX protocol developers—can inspect your private financial data. Only the final score is attested on-chain."
               },
               {
-                q: "What is XORR Finance built on?",
-                a: "XORR Finance is built natively on the high-performance Sui blockchain, leveraging its low latency, high throughput, and secure smart contracts to handle collateral management, lending pools, and BNPL checkouts."
+                q: "What is VEILEX Finance built on?",
+                a: "VEILEX Finance is built natively on the high-performance Sui blockchain, leveraging its low latency, high throughput, and secure smart contracts to handle collateral management, lending pools, and BNPL checkouts."
               }
             ].map((faq, index) => (
               <div key={index} className="bg-[#05080f]/50 border border-border/20 rounded-2xl p-6 hover:border-primary/10 transition-all">
@@ -251,7 +251,7 @@ export default function Page() {
         <div className="flex items-center justify-between">
           <div className="space-y-1">
             <h2 className="text-xl font-bold tracking-tight text-foreground">Asset Overview</h2>
-            <p className="text-xs text-foreground/40 uppercase tracking-widest">XORR // BNPL · Lend/Borrow · Private Credit · sui_{SUI_NETWORK}</p>
+            <p className="text-xs text-foreground/40 uppercase tracking-widest">VEILEX // BNPL · Lend/Borrow · Private Credit · sui_{SUI_NETWORK}</p>
           </div>
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-[10px] text-primary font-bold tracking-wider uppercase backdrop-blur-md">
             <div className={`w-1.5 h-1.5 rounded-full bg-primary ${loading ? "animate-ping" : "animate-pulse"}`} />
@@ -352,7 +352,7 @@ export default function Page() {
           <div className="p-6 space-y-4">
             <h3 className="text-lg font-bold text-white">Borrow against your reputation</h3>
             <p className="text-xs text-foreground/50 leading-relaxed">
-              XORR computes your credit score inside a confidential TEE and attests it on-chain. A strong score unlocks
+              VEILEX computes your credit score inside a confidential TEE and attests it on-chain. A strong score unlocks
               unsecured, collateral-free borrowing — your financial data never leaves the enclave.
             </p>
             <div className="grid grid-cols-2 gap-3">

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "XORR Finance — Buy Now, Pay Never";
+export const alt = "VEILEX Finance — Buy Now, Pay Never";
 export const size = {
   width: 1200,
   height: 630,
@@ -41,7 +41,7 @@ export default async function Image() {
             letterSpacing: "4px",
           }}
         >
-          <span>XORR // PRIVATE_CREDIT_PROTOCOL</span>
+          <span>VEILEX // PRIVATE_CREDIT_PROTOCOL</span>
           <span>STATUS: ACTIVE</span>
         </div>
 
@@ -64,7 +64,7 @@ export default async function Image() {
               alignItems: "center",
             }}
           >
-            XORR <span style={{ color: "#a6f24a", marginLeft: "16px" }}>FINANCE</span>
+            VEILEX <span style={{ color: "#a6f24a", marginLeft: "16px" }}>FINANCE</span>
           </div>
 
           <div
@@ -106,7 +106,7 @@ export default async function Image() {
           }}
         >
           <span>SECURED BY CONFIDENTIAL TEE ENCLAVE</span>
-          <span>APP.XORR.FINANCE</span>
+          <span>APP.VEILEX.FINANCE</span>
         </div>
       </div>
     ),

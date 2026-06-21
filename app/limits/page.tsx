@@ -8,7 +8,7 @@ import { useCurrentAccount, useSuiClient } from "@mysten/dapp-kit"
 import { readCreditProfile, type CreditProfileView } from "@/lib/bnpl"
 import { SUI_NETWORK } from "@/lib/sui"
 
-const LS_PROFILE = "xorr_bnpl_profile"
+const LS_PROFILE = "veilex_bnpl_profile"
 
 export default function LimitsPage() {
   const account = useCurrentAccount()
@@ -29,7 +29,7 @@ export default function LimitsPage() {
     <ConnectGate>
       <div className="flex-1 flex flex-col py-8 gap-8 w-full font-mono text-white max-w-5xl mx-auto">
         <div className="flex flex-col gap-1">
-          <span className="font-mono text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // Credit_Limits · sui_{SUI_NETWORK}</span>
+          <span className="font-mono text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // Credit_Limits · sui_{SUI_NETWORK}</span>
           <h1 className="text-white text-3xl tracking-tighter font-black uppercase italic">Credit Identity</h1>
         </div>
 
@@ -47,7 +47,7 @@ export default function LimitsPage() {
                 <span className="text-primary font-bold text-sm tracking-widest uppercase">Available</span>
               </div>
               <p className="text-[10px] text-white/30 max-w-md mt-4 leading-relaxed">
-                Your limit grows as you repay on time. It is attested to your on-chain CreditProfile by the XORR
+                Your limit grows as you repay on time. It is attested to your on-chain CreditProfile by the VEILEX
                 credit enclave — no manual increase requests needed.
               </p>
             </div>

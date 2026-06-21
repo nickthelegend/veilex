@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "XORR Finance",
-    short_name: "XORR",
+    name: "VEILEX Finance",
+    short_name: "VEILEX",
     description: "Private consumer credit on Sui — BNPL, lend/borrow, and a confidential TEE credit score.",
     start_url: "/",
     display: "standalone",

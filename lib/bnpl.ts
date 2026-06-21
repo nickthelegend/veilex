@@ -1,5 +1,5 @@
-// XORR Buy-Now-Pay-Never transaction builders, wired to the published
-// xorr-contracts package on Sui testnet. Call shapes validated end-to-end by
+// VEILEX Buy-Now-Pay-Never transaction builders, wired to the published
+// veilex-contracts package on Sui testnet. Call shapes validated end-to-end by
 // scripts/e2e-bnpl.mjs.
 import { Transaction } from "@mysten/sui/transactions";
 import type { SuiJsonRpcClient } from "@mysten/sui/jsonRpc";
@@ -58,7 +58,7 @@ export function openPurchaseTx(p: {
       collat,
       tx.pure.u64(u64(p.amountUsdt)),
       tx.pure.u64(BigInt(p.termEpochs ?? 30)),
-      tx.pure.vector("u8", Array.from(new TextEncoder().encode(p.orderId ?? "xorr-order"))),
+      tx.pure.vector("u8", Array.from(new TextEncoder().encode(p.orderId ?? "veilex-order"))),
     ],
   });
   return tx;

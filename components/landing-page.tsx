@@ -21,7 +21,7 @@ export function LandingPage() {
                             <path d="M 500, 500 m -400, 0 a 400,400 0 1,1 800,0 a 400,400 0 1,1 -800,0" fill="transparent" id="circlePath"></path>
                             <text className="text-ring">
                                 <textPath xlinkHref="#circlePath">
-                                    PRIVACY_IS_POWER • XORR_PROTOCOL • PRIVATE_CREDIT_ON_SUI •
+                                    PRIVACY_IS_POWER • VEILEX_PROTOCOL • PRIVATE_CREDIT_ON_SUI •
                                 </textPath>
                             </text>
                         </svg>
@@ -49,7 +49,7 @@ export function LandingPage() {
                             <p className="text-[10px] font-mono tracking-[0.4em] text-primary uppercase">Protocol_Heartbeat_v1.0</p>
                         </div>
                         <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-4 italic uppercase font-display text-white">
-                            XORR PROTOCOL
+                            VEILEX PROTOCOL
                         </h1>
                         <p className="text-slate-200 font-mono text-lg tracking-widest uppercase max-w-3xl mx-auto mb-4">
                             Buy Now Pay Never & Lend/Borrow on Sui.
@@ -123,13 +123,13 @@ export function LandingPage() {
                 <div className="marquee-container">
                     <div className="marquee-content flex gap-20 items-center">
                         <div className="flex gap-8 items-center">
-                            <span className="text-primary font-mono text-base font-bold tracking-[0.3em] uppercase">XORR NETWORK STATUS:</span>
+                            <span className="text-primary font-mono text-base font-bold tracking-[0.3em] uppercase">VEILEX NETWORK STATUS:</span>
                             <span className="text-white/60 font-mono text-sm uppercase tracking-tighter whitespace-nowrap">LOCKED_VALUE: $450,120</span>
                             <span className="text-white/60 font-mono text-sm uppercase tracking-tighter whitespace-nowrap">FHE_OPS_SEC: 1,240</span>
                             <span className="text-white/60 font-mono text-sm uppercase tracking-tighter whitespace-nowrap">TOTAL_LENT: $2,450,192.00</span>
                             <span className="text-white/60 font-mono text-sm uppercase tracking-tighter whitespace-nowrap">ACTIVE_VAULTS: 12,402</span>
                             <span className="text-white/60 font-mono text-sm uppercase tracking-tighter whitespace-nowrap">ZK_SYNC_HEALTH: 100%</span>
-                            <span className="text-primary font-mono text-base font-bold tracking-[0.3em] uppercase ml-20">XORR NETWORK STATUS:</span>
+                            <span className="text-primary font-mono text-base font-bold tracking-[0.3em] uppercase ml-20">VEILEX NETWORK STATUS:</span>
                             <span className="text-white/60 font-mono text-sm uppercase tracking-tighter whitespace-nowrap">LOCKED_POL: 4,200,540</span>
                         </div>
                     </div>

@@ -9,7 +9,7 @@ import {
   USDT_PACKAGE_ID, USDT_FAUCET_ID, SUI_NETWORK, SUI_RPC_URLS,
 } from "@/lib/sui"
 
-const LS_PROFILE = "xorr_bnpl_profile"
+const LS_PROFILE = "veilex_bnpl_profile"
 
 const IDS: [string, string][] = [
   ["Package", USDT_PACKAGE_ID],
@@ -65,7 +65,7 @@ export default function DiagnosticsPage() {
         <div className="flex items-center gap-3">
           <FlaskConical className="w-7 h-7 text-primary" />
           <div className="flex flex-col">
-            <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // Diagnostics · sui_{SUI_NETWORK}</span>
+            <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // Diagnostics · sui_{SUI_NETWORK}</span>
             <h1 className="text-2xl font-black uppercase tracking-tighter italic">Contract Pulse</h1>
           </div>
         </div>

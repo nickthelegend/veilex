@@ -9,7 +9,7 @@ export async function generateMetadata({
   const shortHash = hash ? `${hash.slice(0, 8)}...` : "";
   return {
     title: `Payment Invoice ${shortHash}`,
-    description: `Pay this invoice securely using XORR Finance on Sui.`,
+    description: `Pay this invoice securely using VEILEX Finance on Sui.`,
     robots: {
       index: false,
       follow: false,

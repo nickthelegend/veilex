@@ -1,21 +1,21 @@
-# SEO_PROMPT.md — Production-grade SEO for **XORR Finance**
+# SEO_PROMPT.md — Production-grade SEO for **VEILEX Finance**
 
 > **Paste this whole file into Google Antigravity (or any coding agent) as the task.**
-> Brand at the top of everything: **XORR Finance** — *"Buy Now, Pay Never."*
+> Brand at the top of everything: **VEILEX Finance** — *"Buy Now, Pay Never."*
 
 ---
 
 ## 0. Context (read first, do not skip)
 
-**XORR Finance** is a private consumer-finance protocol on the **Sui** blockchain:
+**VEILEX Finance** is a private consumer-finance protocol on the **Sui** blockchain:
 - **BNPL** ("Buy Now, Pay Never") — checkout with on-chain credit; collateral is deployed to earn yield that auto-repays the loan.
 - **Lend / Borrow** — supply USDC to earn; borrow over- and under-collateralized.
 - **Private TEE Credit** — a credit score computed inside a confidential **AWS Nitro TEE (enclave)** and attested on-chain; the user's financial data never leaves the enclave.
 
 **Stack & deployment (do not change these):**
 - **Next.js (App Router)** + TypeScript + Tailwind CSS, deployed on **Vercel**.
-- Primary app domain: **`https://app.xorr.finance`** (this repo, `xorr-core`).
-- Marketing/landing domain: **`https://xorr.finance`** • Docs: **`https://docs.xorr.finance`** • Merchants: **`https://merchants.xorr.finance`** • Shop: **`https://shop.xorr.finance`**.
+- Primary app domain: **`https://app.veilex.finance`** (this repo, `veilex-core`).
+- Marketing/landing domain: **`https://veilex.finance`** • Docs: **`https://docs.veilex.finance`** • Merchants: **`https://merchants.veilex.finance`** • Shop: **`https://shop.veilex.finance`**.
 - The app is wallet-gated: the home page (`app/page.tsx`) renders a **crawlable marketing hero** when no wallet is connected (great — this is the SEO surface). Inner terminals render only after a Sui wallet connects.
 
 **The dark, terminal/mono aesthetic and the green accent (`--primary`, `#a6f24a`) are part of the brand — keep them.** SEO work must not restyle or break the UI, the wallet gate, or any on-chain logic.
@@ -24,26 +24,26 @@
 
 ## 1. Objective
 
-Ship **production-grade, technical + on-page SEO** for `xorr-core` (app.xorr.finance) using **only native Next.js App Router primitives** (Metadata API, `sitemap.ts`, `robots.ts`, `manifest.ts`, `next/og`). No third-party SEO plugins. Output must be:
+Ship **production-grade, technical + on-page SEO** for `veilex-core` (app.veilex.finance) using **only native Next.js App Router primitives** (Metadata API, `sitemap.ts`, `robots.ts`, `manifest.ts`, `next/og`). No third-party SEO plugins. Output must be:
 1. **Crawlable & indexable** (correct robots, sitemap, canonicals, no accidental `noindex`).
 2. **Rich in SERP & social** (per-route titles/descriptions, Open Graph, Twitter cards, dynamic OG images, JSON-LD structured data).
 3. **Fast & accessible** (Core Web Vitals green, semantic HTML, a11y).
-4. **Brand-forward** — **"XORR Finance" appears in the title of every page** and in structured data.
+4. **Brand-forward** — **"VEILEX Finance" appears in the title of every page** and in structured data.
 
 ---
 
 ## 2. Brand, positioning & target keywords
 
-**Brand string (use verbatim):** `XORR Finance`
+**Brand string (use verbatim):** `VEILEX Finance`
 **Tagline:** `Buy Now, Pay Never.`
 **One-liner:** `Private consumer credit on Sui — BNPL, lending, and a credit score that never leaves a confidential TEE.`
 
 **Title strategy — brand leads or anchors every title:**
-- Home (default): `XORR Finance — Buy Now, Pay Never · Private Credit on Sui`
-- Template for inner pages: `%s | XORR Finance` (e.g. `Faucet | XORR Finance`).
+- Home (default): `VEILEX Finance — Buy Now, Pay Never · Private Credit on Sui`
+- Template for inner pages: `%s | VEILEX Finance` (e.g. `Faucet | VEILEX Finance`).
 
 **Keyword clusters (weave naturally into titles, descriptions, H1/H2, JSON-LD, FAQ — never keyword-stuff):**
-- **Primary / brand:** XORR, XORR Finance, Buy Now Pay Never, private credit on Sui.
+- **Primary / brand:** VEILEX, VEILEX Finance, Buy Now Pay Never, private credit on Sui.
 - **Secondary:** on-chain BNPL, BNPL crypto, Sui lending and borrowing, TEE credit score, confidential DeFi, decentralized credit score, under-collateralized loans DeFi, yield-backed loans, pay-later crypto.
 - **Long-tail:** "buy now pay later on Sui", "borrow against your reputation crypto", "private credit score DeFi", "confidential lending Sui testnet", "earn yield on USDC Sui".
 
@@ -56,26 +56,26 @@ Replace the current `metadata` export with a complete, typed `Metadata` object:
 ```ts
 import type { Metadata } from "next";
 
-const SITE = "https://app.xorr.finance";
+const SITE = "https://app.veilex.finance";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "XORR Finance — Buy Now, Pay Never · Private Credit on Sui",
-    template: "%s | XORR Finance",
+    default: "VEILEX Finance — Buy Now, Pay Never · Private Credit on Sui",
+    template: "%s | VEILEX Finance",
   },
   description:
-    "XORR Finance is private consumer credit on Sui: Buy Now Pay Never (BNPL), lend/borrow USDC, and borrow against a credit score computed inside a confidential TEE. Your financial data never leaves the enclave.",
-  applicationName: "XORR Finance",
+    "VEILEX Finance is private consumer credit on Sui: Buy Now Pay Never (BNPL), lend/borrow USDC, and borrow against a credit score computed inside a confidential TEE. Your financial data never leaves the enclave.",
+  applicationName: "VEILEX Finance",
   keywords: [
-    "XORR", "XORR Finance", "Buy Now Pay Never", "BNPL", "on-chain BNPL",
+    "VEILEX", "VEILEX Finance", "Buy Now Pay Never", "BNPL", "on-chain BNPL",
     "Sui", "Sui lending", "Sui borrowing", "private credit", "TEE credit score",
     "confidential DeFi", "decentralized credit score", "under-collateralized loans",
     "yield-backed loans", "USDC", "pay later crypto",
   ],
-  authors: [{ name: "XORR Finance", url: SITE }],
-  creator: "XORR Finance",
-  publisher: "XORR Finance",
+  authors: [{ name: "VEILEX Finance", url: SITE }],
+  creator: "VEILEX Finance",
+  publisher: "VEILEX Finance",
   category: "finance",
   alternates: { canonical: "/" },
   robots: {
@@ -84,9 +84,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "XORR Finance",
+    siteName: "VEILEX Finance",
     url: SITE,
-    title: "XORR Finance — Buy Now, Pay Never · Private Credit on Sui",
+    title: "VEILEX Finance — Buy Now, Pay Never · Private Credit on Sui",
     description:
       "BNPL, lend/borrow, and a private TEE credit score on Sui. Checkout with credit, repay from yield.",
     locale: "en_US",
@@ -94,10 +94,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "XORR Finance — Buy Now, Pay Never",
+    title: "VEILEX Finance — Buy Now, Pay Never",
     description: "Private consumer credit on Sui: BNPL, lend/borrow, and a TEE-computed credit score.",
-    creator: "@xorrfinance", // confirm the real handle before shipping; remove if none
-    site: "@xorrfinance",
+    creator: "@veilex", // confirm the real handle before shipping; remove if none
+    site: "@veilex",
   },
   icons: {
     icon: [{ url: "/favicon.ico" }, { url: "/icon.svg", type: "image/svg+xml" }],
@@ -110,12 +110,12 @@ Also: keep `<html lang="en">`; ensure the existing `viewport` export stays (move
 
 ### 3.2 Per-route metadata
 For **every** static route, add a route-level `export const metadata` (use `generateMetadata` only for dynamic routes like `app/pay/[hash]`, which should be `robots: { index: false }` since it's a transactional page). Suggested copy:
-| Route | Title (before ` | XORR Finance`) | Description focus |
+| Route | Title (before ` | VEILEX Finance`) | Description focus |
 |---|---|---|
 | `app/bnpl/page.tsx` | `Buy Now, Pay Never` | on-chain BNPL checkout, repay from yield |
 | `app/lend-borrow/page.tsx` | `Lend & Borrow` | supply USDC to earn; over/under-collateralized borrowing |
 | `app/credit/page.tsx` | `Private TEE Credit Score` | score computed in a confidential enclave, attested on-chain |
-| `app/faucet/page.tsx` | `Testnet USDC Faucet` | mint test USDC to try XORR on Sui testnet |
+| `app/faucet/page.tsx` | `Testnet USDC Faucet` | mint test USDC to try VEILEX on Sui testnet |
 | `app/pools/page.tsx` | `Liquidity Pools` | pool TVL, utilization, yields |
 | `app/positions/page.tsx` | `Your Positions` | (also `robots: { index: false }` — user-specific) |
 | `app/transactions/page.tsx` | `Activity` | (`robots: { index: false }`) |
@@ -123,7 +123,7 @@ For **every** static route, add a route-level `export const metadata` (use `gene
 > `"use client"` pages can't export `metadata`. If a page is a client component, either (a) add a small server `layout.tsx` in that route folder that exports the `metadata`, or (b) split the page into a server `page.tsx` that sets metadata and renders a `client` child. Prefer (a) — least churn.
 
 ### 3.3 Dynamic Open Graph images — `app/opengraph-image.tsx` (+ per-route variants)
-Use `next/og` `ImageResponse` (1200×630) to render a branded card: XORR wordmark, tagline "Buy Now, Pay Never.", dark background, green accent. Add `app/twitter-image.tsx` (can re-export the same). Add route-level `opengraph-image.tsx` for `/bnpl`, `/lend-borrow`, `/credit` with their own headline. Keep fonts/sizes legible at small sizes.
+Use `next/og` `ImageResponse` (1200×630) to render a branded card: VEILEX wordmark, tagline "Buy Now, Pay Never.", dark background, green accent. Add `app/twitter-image.tsx` (can re-export the same). Add route-level `opengraph-image.tsx` for `/bnpl`, `/lend-borrow`, `/credit` with their own headline. Keep fonts/sizes legible at small sizes.
 
 ### 3.4 `app/robots.ts`
 ```ts
@@ -131,8 +131,8 @@ import type { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: "*", allow: "/", disallow: ["/api/", "/pay/", "/positions", "/transactions"] }],
-    sitemap: "https://app.xorr.finance/sitemap.xml",
-    host: "https://app.xorr.finance",
+    sitemap: "https://app.veilex.finance/sitemap.xml",
+    host: "https://app.veilex.finance",
   };
 }
 ```
@@ -142,18 +142,18 @@ List the public, indexable routes (`/`, `/bnpl`, `/lend-borrow`, `/credit`, `/fa
 
 ### 3.6 Structured data (JSON-LD) — inject via `<script type="application/ld+json">`
 Add a server component `components/seo/json-ld.tsx` that renders the JSON safely (`dangerouslySetInnerHTML` with `JSON.stringify`). Include in `layout.tsx`:
-- **Organization** — name "XORR Finance", url, logo, sameAs (X/Twitter, GitHub, Discord — fill real URLs or omit).
+- **Organization** — name "VEILEX Finance", url, logo, sameAs (X/Twitter, GitHub, Discord — fill real URLs or omit).
 - **WebSite** — with `potentialAction` `SearchAction` only if site search exists (else omit).
 - **FinancialService** / **Product** — describe BNPL + lending offerings.
-On `/credit` (or home), add a **FAQPage** with 4–6 real Q&As ("What is Buy Now, Pay Never?", "How does the TEE credit score work?", "Is my financial data private?", "What is XORR Finance built on?"). Add **BreadcrumbList** on inner pages.
+On `/credit` (or home), add a **FAQPage** with 4–6 real Q&As ("What is Buy Now, Pay Never?", "How does the TEE credit score work?", "Is my financial data private?", "What is VEILEX Finance built on?"). Add **BreadcrumbList** on inner pages.
 
 ### 3.7 PWA manifest + icons — `app/manifest.ts`
 ```ts
 import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "XORR Finance",
-    short_name: "XORR",
+    name: "VEILEX Finance",
+    short_name: "VEILEX",
     description: "Private consumer credit on Sui — BNPL, lend/borrow, and a confidential TEE credit score.",
     start_url: "/",
     display: "standalone",
@@ -167,7 +167,7 @@ export default function manifest(): MetadataRoute.Manifest {
   };
 }
 ```
-Generate the icon set (`favicon.ico`, `icon.svg`, `apple-icon.png`, `icon-192/512`, maskable) from the existing XORR logo (`/public/logo-image.png`). Add `viewport.themeColor = "#a6f24a"`.
+Generate the icon set (`favicon.ico`, `icon.svg`, `apple-icon.png`, `icon-192/512`, maskable) from the existing VEILEX logo (`/public/logo-image.png`). Add `viewport.themeColor = "#a6f24a"`.
 
 ### 3.8 Canonicals
 `metadataBase` (3.1) + per-route `alternates.canonical` (relative path). Ensure no duplicate-content via trailing slashes — set `trailingSlash: false` (Next default) and keep it.
@@ -201,7 +201,7 @@ Add SEO/trust headers (these are CSP-light and safe): `X-Content-Type-Options: n
 
 ## 4. Acceptance criteria / QA checklist
 
-- [ ] `view-source:https://app.xorr.finance` shows a unique `<title>` leading/anchored with **XORR Finance**, a meta description, canonical, OG + Twitter tags, and JSON-LD.
+- [ ] `view-source:https://app.veilex.finance` shows a unique `<title>` leading/anchored with **VEILEX Finance**, a meta description, canonical, OG + Twitter tags, and JSON-LD.
 - [ ] Every public route has a unique title + description; `/pay/*`, `/positions`, `/transactions` are `noindex`.
 - [ ] `/robots.txt`, `/sitemap.xml`, `/manifest.webmanifest`, `/opengraph-image` all return 200 with correct content-types.
 - [ ] Google **Rich Results Test** passes for Organization + FAQPage; **no** structured-data errors.

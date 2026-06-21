@@ -12,8 +12,8 @@ import { repayUncollateralizedTx } from "@/lib/market"
 import { SUI_NETWORK } from "@/lib/sui"
 import { useTx, findCreated } from "@/lib/use-tx"
 
-const LS_PROFILE = "xorr_bnpl_profile"
-const LS_LOANS = "xorr_bnpl_loans"
+const LS_PROFILE = "veilex_bnpl_profile"
+const LS_LOANS = "veilex_bnpl_loans"
 const MIN_SCORE = 600
 
 type CreditLine = { id: string; kind: string; view: LoanView }
@@ -116,7 +116,7 @@ export default function CreditPage() {
           <div className="size-16 bg-primary/10 rounded-full flex items-center justify-center border border-primary/30"><Wallet className="size-7 text-primary" /></div>
           <div className="text-center">
             <h1 className="text-xl font-black uppercase tracking-tighter text-white mb-2">Connect_Wallet</h1>
-            <p className="text-[10px] text-white/40 uppercase tracking-[0.15em] max-w-[240px] leading-relaxed">Connect your Sui wallet to view your XORR credit profile.</p>
+            <p className="text-[10px] text-white/40 uppercase tracking-[0.15em] max-w-[240px] leading-relaxed">Connect your Sui wallet to view your VEILEX credit profile.</p>
           </div>
         </div>
       </div>
@@ -130,7 +130,7 @@ export default function CreditPage() {
     <div className="flex-1 flex flex-col py-8 gap-8 w-full font-mono text-white">
       <div className="flex items-center justify-between">
         <div className="flex flex-col gap-1">
-          <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // Private_Credit · sui_{SUI_NETWORK}</span>
+          <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // Private_Credit · sui_{SUI_NETWORK}</span>
           <h1 className="text-3xl tracking-tighter font-black uppercase">Credit Dashboard</h1>
         </div>
         <button onClick={refresh} disabled={loading}
@@ -164,7 +164,7 @@ export default function CreditPage() {
         </div>
         <div className="p-6 space-y-5">
           <p className="text-[10px] text-white/40 leading-relaxed max-w-2xl">
-            Your XORR credit score is computed inside a confidential TEE and attested on-chain to your
+            Your VEILEX credit score is computed inside a confidential TEE and attested on-chain to your
             <span className="text-purple-400 font-bold"> CreditProfile</span>. A score of at least {MIN_SCORE} unlocks
             unsecured (collateral-free) borrowing in the money market.
           </p>

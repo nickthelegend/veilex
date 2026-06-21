@@ -42,7 +42,7 @@ export function ConnectWalletButton() {
             variant="outline"
             className="bg-primary/10 border-primary/20 text-primary font-mono text-[10px] tracking-widest uppercase hover:bg-primary/20 rounded-sm px-4 h-9"
           >
-            CONNECT_XORR_WALLET
+            CONNECT_VEILEX_WALLET
           </Button>
         }
       />
@@ -90,7 +90,7 @@ export function ConnectWalletButton() {
         </div>
 
         <div className="bg-white/5 px-4 py-2 border-t border-white/10">
-          <span className="text-[7px] text-white/20 uppercase tracking-widest">XORR_Terminal // Sui_{SUI_NETWORK}</span>
+          <span className="text-[7px] text-white/20 uppercase tracking-widest">VEILEX_Terminal // Sui_{SUI_NETWORK}</span>
         </div>
       </DropdownMenuContent>
     </DropdownMenu>

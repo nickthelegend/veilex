@@ -22,7 +22,7 @@ export const TOKEN_POOLS: TokenPool[] = [
     coinType: `${PKG}::usdc::USDC`,
     poolId: BNPL_POOL_ID,
     decimals: 6,
-    note: "XORR core pool — backs BNPL credit. Earns borrower interest.",
+    note: "VEILEX core pool — backs BNPL credit. Earns borrower interest.",
   },
   {
     symbol: "DUSDC",

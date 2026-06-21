@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 })
 
-const SITE = "https://app.xorr.finance"
+const SITE = "https://app.veilex.finance"
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -35,21 +35,21 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "XORR Finance — Buy Now, Pay Never · Private Credit on Sui",
-    template: "%s | XORR Finance",
+    default: "VEILEX Finance — Buy Now, Pay Never · Private Credit on Sui",
+    template: "%s | VEILEX Finance",
   },
   description:
-    "XORR Finance is private consumer credit on Sui: Buy Now Pay Never (BNPL), lend/borrow USDC, and borrow against a credit score computed inside a confidential TEE. Your financial data never leaves the enclave.",
-  applicationName: "XORR Finance",
+    "VEILEX Finance is private consumer credit on Sui: Buy Now Pay Never (BNPL), lend/borrow USDC, and borrow against a credit score computed inside a confidential TEE. Your financial data never leaves the enclave.",
+  applicationName: "VEILEX Finance",
   keywords: [
-    "XORR", "XORR Finance", "Buy Now Pay Never", "BNPL", "on-chain BNPL",
+    "VEILEX", "VEILEX Finance", "Buy Now Pay Never", "BNPL", "on-chain BNPL",
     "Sui", "Sui lending", "Sui borrowing", "private credit", "TEE credit score",
     "confidential DeFi", "decentralized credit score", "under-collateralized loans",
     "yield-backed loans", "USDC", "pay later crypto",
   ],
-  authors: [{ name: "XORR Finance", url: SITE }],
-  creator: "XORR Finance",
-  publisher: "XORR Finance",
+  authors: [{ name: "VEILEX Finance", url: SITE }],
+  creator: "VEILEX Finance",
+  publisher: "VEILEX Finance",
   category: "finance",
   alternates: { canonical: "/" },
   robots: {
@@ -58,22 +58,22 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "XORR Finance",
+    siteName: "VEILEX Finance",
     url: SITE,
-    title: "XORR Finance — Buy Now, Pay Never · Private Credit on Sui",
+    title: "VEILEX Finance — Buy Now, Pay Never · Private Credit on Sui",
     description:
       "BNPL, lend/borrow, and a private TEE credit score on Sui. Checkout with credit, repay from yield.",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "XORR Finance — Buy Now, Pay Never",
+    title: "VEILEX Finance — Buy Now, Pay Never",
     description: "Private consumer credit on Sui: BNPL, lend/borrow, and a TEE-computed credit score.",
-    site: "@XorrFinance",
-    creator: "@XorrFinance",
+    site: "@Veilex",
+    creator: "@Veilex",
   },
   icons: {
-    icon: [{ url: "/favicon.ico" }, { url: "/xorr-logo.png", type: "image/png" }],
+    icon: [{ url: "/favicon.ico" }, { url: "/veilex-logo.png", type: "image/png" }],
     apple: [{ url: "/apple-icon.png" }],
   },
   manifest: "/manifest.webmanifest",

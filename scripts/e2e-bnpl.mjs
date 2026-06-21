@@ -1,8 +1,8 @@
-// End-to-end on-chain test of the XORR BNPL contracts on Sui testnet.
+// End-to-end on-chain test of the VEILEX BNPL contracts on Sui testnet.
 // Drives the full "Buy Now, Pay Never" loop against the PUBLISHED package and
 // asserts the credit limit grows on repayment.
 //
-// Run:  SUI_PRIVATE_KEY=$(sui keytool export --key-identity xorr-deployer --json | jq -r .exportedPrivateKey) \
+// Run:  SUI_PRIVATE_KEY=$(sui keytool export --key-identity veilex-deployer --json | jq -r .exportedPrivateKey) \
 //       node scripts/e2e-bnpl.mjs
 import { SuiJsonRpcClient } from "@mysten/sui/jsonRpc";
 import { Ed25519Keypair } from "@mysten/sui/keypairs/ed25519";

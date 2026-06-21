@@ -1,6 +1,7 @@
 {
-  "name": "my-v0-project",
+  "name": "veilex",
   "version": "0.1.0",
+  "description": "Trade without a trace. MEV-protected privacy DEX on HashKey Chain.",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -27,6 +28,7 @@
     "@mysten/seal": "^1.2.1",
     "@mysten/sui": "^2.19.0",
     "@privy-io/react-auth": "^3.18.0",
+    "@pythnetwork/hermes-client": "^2.1.0",
     "@radix-ui/react-accordion": "1.2.2",
     "@radix-ui/react-alert-dialog": "1.1.4",
     "@radix-ui/react-aspect-ratio": "1.1.1",

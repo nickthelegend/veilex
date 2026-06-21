@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "XORR Finance — Private TEE Credit";
+export const alt = "VEILEX Finance — Private TEE Credit";
 export const size = {
   width: 1200,
   height: 630,
@@ -41,7 +41,7 @@ export default async function Image() {
             letterSpacing: "4px",
           }}
         >
-          <span>XORR // TEE_ENCLAVE</span>
+          <span>VEILEX // TEE_ENCLAVE</span>
           <span>STATUS: SECURE</span>
         </div>
 
@@ -105,8 +105,8 @@ export default async function Image() {
             fontSize: "16px",
           }}
         >
-          <span>XORR FINANCE</span>
-          <span>APP.XORR.FINANCE/CREDIT</span>
+          <span>VEILEX FINANCE</span>
+          <span>APP.VEILEX.FINANCE/CREDIT</span>
         </div>
       </div>
     ),

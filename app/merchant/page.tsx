@@ -13,7 +13,7 @@ export default function MerchantPage() {
     <ConnectGate>
       <div className="flex-1 flex flex-col py-8 gap-8 w-full font-mono text-white">
         <div className="flex flex-col gap-1">
-          <span className="font-mono text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // Merchant · sui_{SUI_NETWORK}</span>
+          <span className="font-mono text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // Merchant · sui_{SUI_NETWORK}</span>
           <h1 className="text-white text-3xl tracking-tighter font-black uppercase italic">Merchant Hub</h1>
         </div>
 
@@ -51,7 +51,7 @@ export default function MerchantPage() {
           <p className="text-[11px] text-foreground/50 leading-relaxed">
             Bill links open the checkout at <span className="text-primary">/pay/&lt;hash&gt;</span>, where the customer
             pays you in USDC on Sui {SUI_NETWORK}. Configure your settlement address per bill or via
-            NEXT_PUBLIC_XORR_MERCHANT_ADDRESS.
+            NEXT_PUBLIC_VEILEX_MERCHANT_ADDRESS.
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 // Create LendingPool<T> instances for DUSDC (DeepBook USDC) and DEEP so the
 // markets page can list them alongside USDC. The pool type is generic.
-// Run: SUI_PRIVATE_KEY=$(sui keytool export --key-identity xorr-deployer --json | grep -oE 'suiprivkey1[a-z0-9]+') node scripts/create-token-pools.mjs
+// Run: SUI_PRIVATE_KEY=$(sui keytool export --key-identity veilex-deployer --json | grep -oE 'suiprivkey1[a-z0-9]+') node scripts/create-token-pools.mjs
 import { SuiJsonRpcClient } from "@mysten/sui/jsonRpc";
 import { Ed25519Keypair } from "@mysten/sui/keypairs/ed25519";
 import { Transaction } from "@mysten/sui/transactions";

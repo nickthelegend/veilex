@@ -11,7 +11,7 @@ import { readPositions, type OnChainPosition } from "@/lib/positions"
 import { readCreditProfile, USDT_COIN_TYPE, type CreditProfileView } from "@/lib/bnpl"
 import { SUI_NETWORK } from "@/lib/sui"
 
-const LS_PROFILE = "xorr_bnpl_profile"
+const LS_PROFILE = "veilex_bnpl_profile"
 
 const ICONS: Record<OnChainPosition["kind"], React.ReactNode> = {
   bnpl: <CreditCard size={16} />,
@@ -67,7 +67,7 @@ export default function PositionsPage() {
     <div className="flex-1 flex flex-col py-8 gap-8 w-full font-mono text-white">
       <div className="flex items-center justify-between">
         <div className="flex flex-col gap-1">
-          <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">XORR // On_Chain_Positions · sui_{SUI_NETWORK}</span>
+          <span className="text-[10px] tracking-[0.4em] text-primary/60 uppercase">VEILEX // On_Chain_Positions · sui_{SUI_NETWORK}</span>
           <h1 className="text-3xl tracking-tighter font-black uppercase">Your Positions</h1>
         </div>
         <button onClick={refresh} disabled={loading || !account}

@@ -1,7 +1,7 @@
 // This is a Supabase (Deno) Edge Function — it runs in the Deno runtime, NOT in
 // the Next.js/Node build. The `jsr:` specifiers and the `Deno` global only
 // resolve at deploy time, so we shim them for the project-wide `tsc` typecheck.
-// NOT a Sui change; left as-is functionally. TODO(xorr): exclude database/functions
+// NOT a Sui change; left as-is functionally. TODO(veilex): exclude database/functions
 // from the app tsconfig instead of shimming.
 declare const Deno: { env: { get(key: string): string | undefined }; serve(handler: (req: Request) => Response | Promise<Response>): void };
 

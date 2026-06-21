@@ -3,7 +3,7 @@
 //   -> inject external yield -> BNPL borrow -> auto_repay_from_yield -> withdraw.
 // The lender supplies 200 and withdraws MORE (interest + injected yield) = proof
 // the pool earns. Run:
-//   SUI_PRIVATE_KEY=$(sui keytool export --key-identity xorr-deployer --json | grep -oE 'suiprivkey1[a-z0-9]+') node scripts/e2e-yield.mjs
+//   SUI_PRIVATE_KEY=$(sui keytool export --key-identity veilex-deployer --json | grep -oE 'suiprivkey1[a-z0-9]+') node scripts/e2e-yield.mjs
 import { SuiJsonRpcClient } from "@mysten/sui/jsonRpc";
 import { Ed25519Keypair } from "@mysten/sui/keypairs/ed25519";
 import { Transaction } from "@mysten/sui/transactions";

@@ -16,9 +16,9 @@ import {
 import { USDT_PACKAGE_ID, USDT_DECIMALS, SUI_NETWORK, suiscanTxUrl } from "@/lib/sui"
 import { buyNowUnsecuredTx } from "@/lib/market"
 
-const SETTLE_ADDRESS = process.env.NEXT_PUBLIC_XORR_MERCHANT_ADDRESS ?? ""
-const LS_PROFILE = "xorr_bnpl_profile"
-const LS_LOANS = "xorr_bnpl_loans"
+const SETTLE_ADDRESS = process.env.NEXT_PUBLIC_VEILEX_MERCHANT_ADDRESS ?? ""
+const LS_PROFILE = "veilex_bnpl_profile"
+const LS_LOANS = "veilex_bnpl_loans"
 
 interface Bill {
   amount?: number | string
@@ -64,7 +64,7 @@ export default function PayPage() {
       const amt = sp.get("amount")
       if (!amt) return null
       return {
-        amount: Number(amt), asset: "USDC", description: sp.get("desc") || "Direct payment via XORR", status: "pending",
+        amount: Number(amt), asset: "USDC", description: sp.get("desc") || "Direct payment via VEILEX", status: "pending",
         merchant: { name: sp.get("merchant") || "Merchant", escrow_contract: sp.get("escrow") || undefined, sui_address: sp.get("to") || undefined },
       }
     }
@@ -135,7 +135,7 @@ export default function PayPage() {
       const raw = BigInt(Math.floor(billAmount * 10 ** USDT_DECIMALS))
       const tx = new Transaction()
       const [pay] = tx.splitCoins(tx.object(primaryCoin), [tx.pure.u64(raw)])
-      const orderBytes = Array.from(new TextEncoder().encode(hash ?? "xorr-bill"))
+      const orderBytes = Array.from(new TextEncoder().encode(hash ?? "veilex-bill"))
       if (settleViaEscrow) {
         tx.moveCall({ target: `${USDT_PACKAGE_ID}::merchant_escrow::settle_payment`, typeArguments: [USDT_COIN_TYPE], arguments: [tx.object(escrowId!), pay, tx.pure.vector("u8", orderBytes)] })
       } else {
@@ -155,7 +155,7 @@ export default function PayPage() {
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-6 text-center text-white">
         <AlertCircle className="w-12 h-12 text-red-500" />
         <div className="flex flex-col gap-1"><h1 className="text-xl font-black uppercase tracking-tighter">Bill Not Found</h1><p className="text-[10px] text-white/40 uppercase">This payment link may be expired or invalid.</p></div>
-        <Link href="/" className="bg-white/5 px-6 py-2 rounded border border-white/10 text-[10px] font-bold uppercase hover:bg-white/10 transition-all">Return to XORR</Link>
+        <Link href="/" className="bg-white/5 px-6 py-2 rounded border border-white/10 text-[10px] font-bold uppercase hover:bg-white/10 transition-all">Return to VEILEX</Link>
       </div>
     )
   }
@@ -206,7 +206,7 @@ export default function PayPage() {
         <div className="p-6 flex flex-col gap-5">
           <div className="flex flex-col gap-2">
             <span className="text-[10px] text-white/40 uppercase font-bold tracking-widest">Description</span>
-            <p className="text-xs text-white/80 leading-relaxed font-medium">{bill.description || "Purchase via XORR on Sui."}</p>
+            <p className="text-xs text-white/80 leading-relaxed font-medium">{bill.description || "Purchase via VEILEX on Sui."}</p>
           </div>
 
           {/* Credit panel */}
@@ -214,7 +214,7 @@ export default function PayPage() {
             <div className="flex items-center gap-3">
               <ShieldCheck className="w-5 h-5 text-primary" />
               <div className="flex flex-col">
-                <span className="text-[10px] font-bold text-white uppercase tracking-wide">XORR Credit</span>
+                <span className="text-[10px] font-bold text-white uppercase tracking-wide">VEILEX Credit</span>
                 <span className="text-[9px] text-primary font-bold uppercase tracking-widest">
                   {profile ? `Limit ${profile.creditLimit} · Available ${available} USDC` : profileId ? "Loading…" : "No credit profile yet"}
                 </span>
