@@ -10,12 +10,10 @@ import { EvmConnectButton } from "@/components/wallet/evm-connect-button"
 
 const NAV = [
   { href: "/trade", label: "Trade" },
-  { href: "/lend", label: "Lend" },
-  { href: "/borrow", label: "Borrow" },
-  { href: "/credit", label: "Credit" },
-  { href: "/positions", label: "Positions" },
-  { href: "/transactions", label: "Activity" },
-  { href: "/faucet", label: "Faucet" },
+  { href: "/swap", label: "Swap" },
+  { href: "/pools", label: "Pools" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/leaderboard", label: "Leaderboard" },
 ]
 
 export function AppHeader() {
@@ -32,7 +30,7 @@ export function AppHeader() {
         {/* Left: menu icon + logo */}
         <div className="flex items-center gap-2">
           <SidebarDrawer open={open} onOpenChange={setOpen} />
-          <Link href="/" className="font-semibold tracking-wide">
+          <Link href="/trade" className="font-semibold tracking-wide">
             <span className="inline-flex items-center gap-2">
               <span className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-black font-black text-base">V</span>
               <span className="text-lg font-black tracking-tight text-foreground">

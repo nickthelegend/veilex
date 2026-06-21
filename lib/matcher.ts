@@ -42,6 +42,7 @@ export async function submitOrder(db: Db, input: OrderInput): Promise<{ order: O
   const fills = db.collection<FillDoc>(FILLS);
   const isMarket = input.type === "market";
 
+  const trader = input.trader.toLowerCase();
   const taker: OrderDoc = {
     pair: input.pair,
     side: input.side,
@@ -51,7 +52,7 @@ export async function submitOrder(db: Db, input: OrderInput): Promise<{ order: O
     remaining: input.size,
     filled: 0,
     avgPrice: 0,
-    trader: input.trader,
+    trader,
     status: "open",
     createdAt: new Date().toISOString(),
   };
@@ -94,7 +95,7 @@ export async function submitOrder(db: Db, input: OrderInput): Promise<{ order: O
       price: maker.price,
       size: qty,
       side: input.side,
-      taker: input.trader,
+      taker: trader,
       maker: maker.trader,
       createdAt: new Date().toISOString(),
     };
@@ -134,7 +135,7 @@ export async function recentFills(db: Db, pair: string, limit = 30) {
 }
 
 export async function ordersByTrader(db: Db, trader: string, pair?: string) {
-  const q: Record<string, unknown> = { trader };
+  const q: Record<string, unknown> = { trader: trader.toLowerCase() };
   if (pair) q.pair = pair;
   return db.collection<OrderDoc>(ORDERS).find(q).sort({ createdAt: -1 }).limit(100).toArray();
 }
@@ -143,8 +144,33 @@ export async function cancelOrder(db: Db, id: string, trader: string) {
   return db
     .collection<OrderDoc>(ORDERS)
     .findOneAndUpdate(
-      { _id: new ObjectId(id), trader, status: "open" },
+      { _id: new ObjectId(id), trader: trader.toLowerCase(), status: "open" },
       { $set: { status: "cancelled" } },
       { returnDocument: "after" },
     );
+}
+
+/** All fills involving a trader (as taker or maker), newest first, across pairs. */
+export async function fillsByTrader(db: Db, trader: string, limit = 100) {
+  const t = trader.toLowerCase();
+  return db
+    .collection<FillDoc>(FILLS)
+    .find({ $or: [{ taker: t }, { maker: t }] })
+    .sort({ createdAt: -1 })
+    .limit(limit)
+    .toArray();
+}
+
+/** Volume leaderboard — total traded notional per address (both sides of each fill). */
+export async function leaderboard(db: Db, limit = 50) {
+  return db
+    .collection<FillDoc>(FILLS)
+    .aggregate([
+      { $project: { vol: { $multiply: ["$size", "$price"] }, parties: ["$taker", "$maker"] } },
+      { $unwind: "$parties" },
+      { $group: { _id: "$parties", volume: { $sum: "$vol" }, trades: { $sum: 1 } } },
+      { $sort: { volume: -1 } },
+      { $limit: limit },
+    ])
+    .toArray();
 }

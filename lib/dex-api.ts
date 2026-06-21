@@ -40,3 +40,17 @@ export async function getMyOrders(trader: string, pair: string) {
 export async function cancelOrder(id: string, trader: string) {
   return jsonOrThrow(await fetch(`/api/orders/${id}?trader=${trader}`, { method: "DELETE" }));
 }
+
+/** All of a trader's orders across every market. */
+export async function getMyOrdersAll(trader: string) {
+  return jsonOrThrow(await fetch(`/api/orders?trader=${trader}`));
+}
+
+/** All fills involving a trader across every market. */
+export async function getMyFills(trader: string) {
+  return jsonOrThrow(await fetch(`/api/orders?trader=${trader}&view=fills`));
+}
+
+export async function getLeaderboard() {
+  return jsonOrThrow(await fetch(`/api/leaderboard`));
+}

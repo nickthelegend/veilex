@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getDexDb, isDexDbConfigured } from "@/lib/dex-db";
-import { submitOrder, getBook, recentFills, ordersByTrader, type Side, type OrderType } from "@/lib/matcher";
+import { submitOrder, getBook, recentFills, ordersByTrader, fillsByTrader, type Side, type OrderType } from "@/lib/matcher";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -11,12 +11,14 @@ export const dynamic = "force-dynamic";
 export async function GET(req: Request) {
   if (!isDexDbConfigured()) return NextResponse.json({ error: "MONGODB_URI not set" }, { status: 503 });
   const { searchParams } = new URL(req.url);
-  const pair = searchParams.get("pair") || "SOL/USDC";
+  const rawPair = searchParams.get("pair");
+  const pair = rawPair || "SOL/USDC";
   const trader = searchParams.get("trader");
   const view = searchParams.get("view");
 
   const db = await getDexDb();
-  if (trader) return NextResponse.json({ orders: await ordersByTrader(db, trader, pair) });
+  if (trader && view === "fills") return NextResponse.json({ fills: await fillsByTrader(db, trader) });
+  if (trader) return NextResponse.json({ orders: await ordersByTrader(db, trader, rawPair || undefined) });
   if (view === "fills") return NextResponse.json({ fills: await recentFills(db, pair) });
   return NextResponse.json(await getBook(db, pair));
 }

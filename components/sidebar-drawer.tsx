@@ -6,12 +6,11 @@ import NextImage from "next/image"
 import { usePathname } from "next/navigation"
 import {
   MenuIcon,
-  LayoutDashboard,
-  PiggyBank,
-  ShoppingBag,
-  Gauge,
-  CreditCard,
-  History,
+  CandlestickChart,
+  ArrowLeftRight,
+  Droplets,
+  Wallet,
+  Trophy,
   LogOut,
   User
 } from "lucide-react"
@@ -19,12 +18,11 @@ import { useObolusWallet } from "@/lib/hooks/useObolusWallet"
 import { cn } from "@/lib/utils"
 
 const NAV_ITEMS = [
-  { href: "/lend", label: "LEND", icon: PiggyBank },
-  { href: "/borrow", label: "BORROW", icon: ShoppingBag },
-  { href: "/credit", label: "CREDIT", icon: CreditCard },
-  { href: "/positions", label: "POSITIONS", icon: Gauge },
-  { href: "/transactions", label: "ACTIVITY", icon: History },
-  { href: "/faucet", label: "FAUCET", icon: LayoutDashboard },
+  { href: "/trade", label: "TRADE", icon: CandlestickChart },
+  { href: "/swap", label: "SWAP", icon: ArrowLeftRight },
+  { href: "/pools", label: "POOLS", icon: Droplets },
+  { href: "/portfolio", label: "PORTFOLIO", icon: Wallet },
+  { href: "/leaderboard", label: "LEADERBOARD", icon: Trophy },
 ]
 
 export function SidebarDrawer({ open, onOpenChange }: { open?: boolean; onOpenChange?: (v: boolean) => void }) {
