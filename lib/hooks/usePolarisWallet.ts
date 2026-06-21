@@ -1,13 +1,13 @@
-import { useCurrentAccount } from "@mysten/dapp-kit";
+import { useAccount } from "wagmi";
 
-// Migrated from wagmi (EVM) to Sui (@mysten/dapp-kit). Returns the connected
-// Sui account so address-consuming UI keeps working through the pivot.
+// EVM wallet (wagmi / RainbowKit) on HashKey Chain. Returns the connected
+// account so address-consuming UI across the app reflects the EVM wallet.
 export function usePolarisWallet() {
-  const account = useCurrentAccount();
+  const { address, isConnected, isConnecting, chainId } = useAccount();
   return {
-    address: account?.address,
-    connected: !!account,
-    connecting: false,
-    networkId: undefined as number | undefined,
+    address: address as string | undefined,
+    connected: isConnected,
+    connecting: isConnecting,
+    networkId: chainId as number | undefined,
   };
 }

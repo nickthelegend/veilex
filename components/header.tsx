@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { SidebarDrawer } from "./sidebar-drawer"
 import { cn } from "@/lib/utils"
-import { ConnectWalletButton } from "@/components/wallet/connect-wallet-button"
+import { EvmConnectButton } from "@/components/wallet/evm-connect-button"
 
 const NAV = [
   { href: "/lend", label: "Lend" },
@@ -58,7 +58,7 @@ export function AppHeader() {
 
         {/* Right: wallet actions */}
         <div className="flex items-center justify-end gap-3 min-w-0">
-          <ConnectWalletButton />
+          <EvmConnectButton />
         </div>
       </div>
     </header>
