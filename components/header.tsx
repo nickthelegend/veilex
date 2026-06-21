@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils"
 import { EvmConnectButton } from "@/components/wallet/evm-connect-button"
 
 const NAV = [
+  { href: "/trade", label: "Trade" },
   { href: "/lend", label: "Lend" },
   { href: "/borrow", label: "Borrow" },
   { href: "/credit", label: "Credit" },
