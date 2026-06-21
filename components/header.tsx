@@ -34,7 +34,10 @@ export function AppHeader() {
           <SidebarDrawer open={open} onOpenChange={setOpen} />
           <Link href="/" className="font-semibold tracking-wide">
             <span className="inline-flex items-center gap-2">
-              <Image src="/logo.png" alt="VEILEX" width={120} height={32} className="h-8 w-auto max-h-8" />
+              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-black font-black text-base">V</span>
+              <span className="text-lg font-black tracking-tight text-foreground">
+                VEIL<span className="text-primary">EX</span>
+              </span>
             </span>
           </Link>
         </div>

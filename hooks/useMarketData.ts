@@ -18,11 +18,6 @@ export function useMarketData(feedIds: string[], intervalMs = 4000) {
   useEffect(() => {
     let alive = true;
 
-    const loadBaseline = async () => {
-      const ago = await fetchPyth24hAgo(feedIds);
-      if (alive) prevDay.current = ago;
-    };
-
     const tick = async () => {
       try {
         const latest = await fetchPythPrices(feedIds);
@@ -44,8 +39,19 @@ export function useMarketData(feedIds: string[], intervalMs = 4000) {
       }
     };
 
-    loadBaseline().then(tick);
+    // Live prices fire immediately; the 24h baseline loads in parallel and
+    // refines change% when it lands (never blocks the price feed).
+    tick();
     const t = setInterval(tick, intervalMs);
+    fetchPyth24hAgo(feedIds)
+      .then((ago) => {
+        if (alive && Object.keys(ago).length) {
+          prevDay.current = ago;
+          tick();
+        }
+      })
+      .catch(() => {});
+
     return () => {
       alive = false;
       clearInterval(t);

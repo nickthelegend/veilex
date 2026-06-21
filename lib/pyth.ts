@@ -16,7 +16,10 @@ export async function fetchPythPrices(feedIds: string[]): Promise<Record<string,
   const ids = feedIds.filter(isRealFeed);
   if (!ids.length) return {};
   const qs = ids.map((id) => `ids[]=${id}`).join("&");
-  const res = await fetch(`${HERMES}/v2/updates/price/latest?${qs}&parsed=true`, { cache: "no-store" });
+  // ignore_invalid_price_ids → one unknown/deprecated feed won't 400 the batch.
+  const res = await fetch(`${HERMES}/v2/updates/price/latest?${qs}&parsed=true&ignore_invalid_price_ids=true`, {
+    cache: "no-store",
+  });
   if (!res.ok) throw new Error(`hermes ${res.status}`);
   const data = await res.json();
   const out: Record<string, PythPrice> = {};
@@ -38,7 +41,9 @@ export async function fetchPyth24hAgo(feedIds: string[]): Promise<Record<string,
   const ts = Math.floor(Date.now() / 1000) - 24 * 3600;
   const qs = ids.map((id) => `ids=${id}`).join("&");
   try {
-    const res = await fetch(`${BENCHMARKS}/v1/updates/price/${ts}?${qs}&parsed=true`, { cache: "no-store" });
+    const res = await fetch(`${BENCHMARKS}/v1/updates/price/${ts}?${qs}&parsed=true&ignore_invalid_price_ids=true`, {
+      cache: "no-store",
+    });
     if (!res.ok) return {};
     const data = await res.json();
     const out: Record<string, number> = {};

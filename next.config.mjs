@@ -39,7 +39,8 @@ const nextConfig = {
       {
         source: '/(.*)',
         headers: [
-          { key: 'Cross-Origin-Embedder-Policy', value: 'credentialless' },
+          // NOTE: COEP removed — it blocked third-party embeds like the
+          // TradingView chart (was legacy config for FHE WASM, unused by the DEX).
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
