@@ -47,6 +47,16 @@ export const MARKETS: Market[] = TOKENS.filter((t) => !QUOTES.has(t.symbol)).map
 
 export const MARKET_FEED_IDS = MARKETS.map((m) => m.feedId);
 
+// Pools actually deployed + seeded on HashKey testnet (base/dUSDC). dUSDC is
+// token1 in all three (base addresses sort below the dUSDC address), so the
+// dUSDC reserve is reserve1.
+export const LIVE_POOLS: Record<string, { pool: `0x${string}`; base: `0x${string}` }> = {
+  SOL: { pool: "0xbF11A45B312Fd4568226BE6D3eda82AE05cBbb86", base: "0x25593093dE1614Cd832Ad78023Ada0F644356bcd" },
+  WETH: { pool: "0x1431038044cD99FbEFB563b1D0Df4B554B4B90Eb", base: "0x30a946eCDA664418a292dc4362E60Cc4dE9d1bC9" },
+  WBTC: { pool: "0xBae6031c0A311562bd07918135630ed1630ab297", base: "0x5c29480b6A5117F2c47FC39d20095812246E4a98" },
+};
+export const isLivePool = (symbol: string) => symbol in LIVE_POOLS;
+
 export function findMarket(symbol: string): Market {
   return MARKETS.find((m) => m.symbol === symbol) || MARKETS[0];
 }
